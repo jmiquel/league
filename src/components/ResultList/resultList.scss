@@ -1,0 +1,47 @@
+.result-list-container {
+  //border: solid 2px #4a4aa0;
+  width: 62%;
+  margin: auto;
+  margin-top: 1em;
+  border-radius: 5px;
+
+  .result-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: solid 2px #c3c3c3;
+    padding: 1em 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    .result-item {
+
+      &.result-name {
+        min-width: 125px;
+        padding: 0 0.5em;
+        line-height: 3em;
+
+        &.winner {
+          text-align: right
+        }
+
+        &.loser {
+          text-align: left
+        }
+      }
+
+      &.result-score {
+        font-size: 25px;
+        background: #f50000;
+        color: white;
+        padding: 0.3em 0.5em;
+
+        &.dash {
+          padding: 0.3em 0;
+        }
+      }
+    }
+  }
+}
