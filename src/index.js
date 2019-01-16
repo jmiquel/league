@@ -1,12 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Header from './components/Header/Header'
+import Report from './pages/Report/Report'
+import League from './pages/League/League'
+import Results from './pages/Results/Results'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import './index.scss';
+
+const App = () => (
+  <BrowserRouter>
+    <div className='app-container'>
+      <Header />
+      <Route path="/league" component={League} />
+      <Route path="/results" component={Results} />
+      <Route path="/report" component={Report} />
+    </div>
+  </BrowserRouter>
+)
+
+render(<App />, document.getElementById('root'));
